@@ -15,6 +15,9 @@
       <phpcs_by_interpreter asDefaultInterpreter="true" interpreter_id="d7bd7177-31b4-4c83-971a-773d80b62977" timeout="30000" />
     </phpcs_settings>
   </component>
+  <component name="PhpExternalFormatter">
+    <option name="externalFormatter" value="PHP_CS_FIXER" />
+  </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.4" />
   <component name="PhpStan">
     <PhpStan_settings>
