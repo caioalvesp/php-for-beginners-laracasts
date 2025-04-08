@@ -12,7 +12,7 @@
       <form class="space-y-6" action="/session" method="POST">
         <div>
           <div>
-            <input type="email" name="email" id="email" autocomplete="email" placeholder="E-mail address" required class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+            <input type="email" name="email" id="email" autocomplete="email" placeholder="E-mail address" value="<?= old('email') ?>" required class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
 
             <?php if (isset($errors['email'])) : ?>
               <p class="mt-2 text-xs text-red-500"><?= $errors['email'] ?></p>
