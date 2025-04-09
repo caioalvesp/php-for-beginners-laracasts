@@ -2,8 +2,6 @@
 
 namespace Core;
 
-use Core\Middleware\Auth;
-use Core\Middleware\Guest;
 use Core\Middleware\Middleware;
 
 class Router {
@@ -37,7 +35,7 @@ class Router {
   }
 
   public function put($uri, $controller) {
-    return $this->add('URI', $uri, $controller);
+    return $this->add('PUT', $uri, $controller);
   }
 
   public function only($key) {
@@ -58,6 +56,10 @@ class Router {
     $this->abort();
   }
 
+  public function previousUrl() {
+    return $_SERVER['HTTP_REFERER'];
+  }
+
   protected function abort($code = 404) {
     http_response_code($code);
 
@@ -66,20 +68,3 @@ class Router {
     die();
   }
 }
-
-
-// function routeToController($uri, $routes) {
-//   if (array_key_exists($uri, $routes)) {
-//     require base_path($routes[$uri]);
-//   } else {
-//     abort();
-//   }
-// }
-
-// function abort($code = 404) {
-//   http_response_code($code);
-
-//   require base_path("views/{$code}.php");
-
-//   die();
-// }
